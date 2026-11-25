@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  ORD13-2800 purchase-intent measurement page (T006 D, limited measurement).
+  Static single file. No external resources, no scripts, no forms.
+  This page collects NO personal information.
+
+  PLACEHOLDERS — replace before publication:
+  - https://github.com/5himq/ord13-2800/releases/download/sample-v1/ord13-2800-sample.zip : URL of the free sample package
+    (ord13-2800-sample.zip). The real URL is inserted once the
+    publication venue has been decided.
+  - https://github.com/5himq/ord13-2800-intent : destination of the purchase-intent button.
+    It is a click-measurement endpoint only; it must not collect
+    personal information.
+
+  Purchase-intent button wording (confirmed Japanese text):
+  「$39.99のフル版を予約／購入通知を受け取る（12/30公開予定）」
+  The button below shows the English equivalent of this wording.
+  NOTE: the final button wording is pending confirmation in the main chat.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORD13-2800 — Multiplicative Order of 13, Verified Dataset (Free Sample)</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+         margin: 0; color: #1a1a1a; background: #fafafa; line-height: 1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  .sub { color: #555; margin-top: 0; }
+  .card { background: #fff; border: 1px solid #ddd; border-radius: 8px;
+          padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .price { font-size: 1.6rem; font-weight: 700; }
+  .btn { display: inline-block; padding: 0.8rem 1.4rem; border-radius: 6px;
+         text-decoration: none; font-weight: 600; margin: 0.4rem 0.4rem 0.4rem 0; }
+  .btn-primary { background: #14532d; color: #fff; }
+  .btn-secondary { background: #fff; color: #14532d; border: 2px solid #14532d; }
+  code, .mono { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+                font-size: 0.92em; word-break: break-all; }
+  table { border-collapse: collapse; }
+  td, th { border: 1px solid #ccc; padding: 0.35rem 0.7rem; text-align: left; }
+  .note { color: #555; font-size: 0.92rem; }
+  footer { margin-top: 3rem; color: #666; font-size: 0.9rem;
+           border-top: 1px solid #ddd; padding-top: 1rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ORD13-2800</h1>
+  <p class="sub">The multiplicative order of 13 — a verified numerical dataset
+  of 2,800,000 values.</p>
+
+  <h2>What it is</h2>
+  <p>For each n, let m<sub>n</sub> be the n-th positive integer coprime to 13
+  (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, …). This dataset tabulates</p>
+  <p class="mono" style="text-align:center;">a(n) = ord<sub>13</sub>(m<sub>n</sub>)</p>
+  <p>the multiplicative order of 13 modulo m<sub>n</sub>: the least a ≥ 1 with
+  13<sup>a</sup> ≡ 1 (mod m<sub>n</sub>). First 20 values:
+  1, 1, 1, 1, 4, 1, 2, 2, 3, 4, 10, 1, 2, 4, 4, 4, 3, 18, 4, 2.</p>
+  <p>No dedicated OEIS entry or b-file for this sequence was found in the
+  range surveyed when the dataset was compiled, so these values are not a
+  copy of an existing OEIS b-file.</p>
+
+  <h2>Free sample — check the data yourself</h2>
+  <p>The free sample contains points 1–100 of the full product:
+  <strong>n = 1 .. 100,000</strong> (100,000 values, m up to 108,333), in the
+  same CSV + JSON format as the full product, with per-file SHA-256 hashes.
+  Sample totals: sum of values = 796,417,113; minimum = 1; maximum = 108,300.
+  Example values: a(1,000) = 342 (m = 1,083); a(100,000) = 6,018
+  (m = 108,333). Spot-check any value with
+  <code>pow(13, a, m) == 1</code> in Python, plus the same test with a
+  divided by each of its prime factors (all must differ from 1).</p>
+  <p><a class="btn btn-secondary" href="https://github.com/5himq/ord13-2800/releases/download/sample-v1/ord13-2800-sample.zip">Download the free sample (ZIP, ~1.5 MB)</a></p>
+
+  <h2>How the data was verified</h2>
+  <ul>
+    <li><strong>Generation</strong> — orders computed by reducing φ(m) over its
+    prime factorization.</li>
+    <li><strong>Defining-property check</strong> — 13<sup>a</sup> ≡ 1 (mod m)
+    and minimality verified directly for every term. Violations: 0.</li>
+    <li><strong>Independent recomputation</strong> — every term recomputed by a
+    different algorithm (prime-power decomposition + lcm). Mismatches: 0.</li>
+  </ul>
+  <p>Full-dataset reference figures: sum of all 2,800,000 values =
+  511,687,189,205; maximum value = 3,033,322 (at n = 2,799,991);
+  385,730 distinct values. Master-file SHA-256:
+  <span class="mono">5a703013b96da295649782a3f1837facd4bde88fa5aa0125c05b4de7eba9424b</span>.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0;">Full product</h2>
+    <p class="price">$39.99</p>
+    <p>All 2,800 points (n = 1 .. 2,800,000), CSV + JSON + README + manifest
+    per point, an index file, and the single master file.
+    <strong>Release date: December 30, 2026</strong> (planned listing:
+    Getly, Windows Apps category).</p>
+    <!-- Purchase-intent button. Japanese confirmed wording:
+         「$39.99のフル版を予約／購入通知を受け取る（12/30公開予定）」
+         Final wording pending confirmation in the main chat. -->
+    <p><a class="btn btn-primary" href="https://github.com/5himq/ord13-2800-intent">Reserve the full edition for $39.99 / Get the launch notification (releases Dec 30)</a></p>
+    <p class="note">Clicking the button only registers your interest so we can
+    measure demand. It is not a purchase and no payment is taken.</p>
+  </div>
+
+  <footer>
+    <p><strong>About this page:</strong> this is a demand-measurement page for
+    an upcoming release. Nothing is sold here, no payment is processed, and
+    this page collects no personal information (no accounts, no forms, no
+    tracking scripts). The full product goes on sale on December 30, 2026,
+    at $39.99.</p>
+  </footer>
+</main>
+</body>
+</html>
