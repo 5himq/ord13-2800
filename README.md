@@ -22,8 +22,9 @@ Points 1–100 of the full product (n = 1 .. 100,000; 100,000 values), in the
 same CSV + JSON format as the full product, with per-file SHA-256 hashes:
 
 - **Product / measurement page:** https://5himq.github.io/ord13-2800/
-- **Download the free sample (ZIP, ~1.5 MB):** from the release page:
-  https://github.com/5himq/ord13-2800/releases/tag/sample-v1
+- **Download the free sample (ZIP, ~1.5 MB):**
+  https://github.com/5himq/ord13-2800/releases/download/sample-v1/ord13-2800-sample.zip
+  (release page: https://github.com/5himq/ord13-2800/releases/tag/sample-v1)
 
 Sample totals: sum of all 100,000 values = 796,417,113; minimum = 1;
 maximum = 108,300. Example values: a(1,000) = 342 (m = 1,083);
