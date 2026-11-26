@@ -58,3 +58,8 @@ the measurement page collects no personal information.
 
 Spot-check any value in Python: `pow(13, a, m) == 1`, plus the same test
 with `a` divided by each of its prime factors (all must differ from 1).
+
+## Keywords
+
+multiplicative order of 13 · ord_13(m) · integer sequence · number theory
+dataset · modular arithmetic · verified numerical data · CSV / JSON data
