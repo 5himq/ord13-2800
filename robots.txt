@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://5himq.github.io/ord13-2800/sitemap.xml
